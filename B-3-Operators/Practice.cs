@@ -214,6 +214,20 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P9_9_CreaditCalculator()
         {
+            Console.WriteLine("Enter your credit size: ");
+            var creditSize = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Enter percent you will get: ");
+            var percent = Convert.ToSByte(Console.ReadLine());
+
+            int[] month = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ,12 };
+
+            var sum = (creditSize +(creditSize* percent / 100))/12;
+
+            for (int i=0; i < month.Length; i++)
+            {
+                Console.WriteLine($"{month[i]} month {sum}");
+            } 
 
         }
     }
