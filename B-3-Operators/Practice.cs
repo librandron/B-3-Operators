@@ -201,7 +201,12 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P8_9_CircleArea()
         {
+            Console.WriteLine("Enter radius:");
+            var radius = Convert.ToInt16(Console.ReadLine());
 
+            var circleSquare = Math.PI * Math.Pow(radius,2);
+
+            Console.WriteLine($"Circle square = {circleSquare}");
         }
 
         /// <summary>
