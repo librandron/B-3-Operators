@@ -153,16 +153,6 @@ namespace B_3_Operators
                         }
 
                     }
-
-
-
-
-
-
-
-
-
-
                     break;
             }
 
@@ -177,6 +167,8 @@ namespace B_3_Operators
         {
 
         }
+             
+        
 
         /// <summary>
         /// B3-P6/9. FiveNumbersAddition. Изменить предыдущий алгоритм. 
