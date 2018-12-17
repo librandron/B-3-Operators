@@ -13,14 +13,14 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P1_9_NumbersAddition()
         {
-            console.writeline("enter first number");
-            var firstnumber = convert.toint16(console.readline());
+            Console.WriteLine("enter first number");
+            var firstnumber = Convert.ToInt16(Console.ReadLine());
 
-            console.writeline("enter second number");
-            var secondnumber = convert.toint16(console.readline());
+            Console.WriteLine("enter second number");
+            var secondnumber = Convert.ToInt16(Console.ReadLine());
 
             var sum = firstnumber + secondnumber;
-            console.writeline($"{firstnumber} + {secondnumber} = {sum}");
+            Console.WriteLine($"{firstnumber} + {secondnumber} = {sum}");
 
 
         }
@@ -108,23 +108,55 @@ namespace B_3_Operators
             Console.WriteLine("Enter your result");
             var answerSum = Convert.ToInt16(Console.ReadLine());
 
-            var sum = firstNumber + secondNumber;
+            Console.WriteLine("Enter your operand: 'p' for PLUS or 'm' for minus ");
+            var operand = Console.ReadLine();
 
-            if (answerSum == sum)
+
+            switch (operand)
             {
-                Console.WriteLine("Correct");
+                case "m":
+                    {
+                        var result = firstNumber - secondNumber;
+                        if (answerSum == result)
+                        {
+                            Console.WriteLine("Correct");
+                        }
+                        else
+                        {
+                            if (answerSum > result)
+                            {
+                                Console.WriteLine("Incorrect, expect amount more than you enter");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Incorrect, expect amount less than you enter");
+                            }
+
+                        }
+                        break;
+                    }
+                case "p":
+                    var result2 = firstNumber + secondNumber;
+                    if (answerSum == result2)
+                    {
+                        Console.WriteLine("Correct");
+                    }
+                    else
+                    {
+                        if (answerSum > result2)
+                        {
+                            Console.WriteLine("Incorrect, expect amount less than you enter");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect, expect amount more than you enter");
+                        }
+
+                    }
+                    break;
             }
-            else
-            {
-                if (answerSum > sum)
-                {
-                    Console.WriteLine("Incorrect, expect amount less than you enter");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect, expect amount more than you enter");
-                }
-            }
+
+
         }
 
         /// <summary>
@@ -135,6 +167,8 @@ namespace B_3_Operators
         {
 
         }
+             
+        
 
         /// <summary>
         /// B3-P6/9. FiveNumbersAddition. Изменить предыдущий алгоритм. 
@@ -159,7 +193,12 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P8_9_CircleArea()
         {
+            Console.WriteLine("Enter radius:");
+            var radius = Convert.ToInt16(Console.ReadLine());
 
+            var circleSquare = Math.PI * Math.Pow(radius,2);
+
+            Console.WriteLine($"Circle square = {circleSquare}");
         }
 
         /// <summary>
@@ -167,7 +206,23 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P9_9_CreaditCalculator()
         {
+            Console.WriteLine("Enter your credit size: ");
+            decimal creditSize = Convert.ToDecimal(Console.ReadLine());
 
+            Console.WriteLine("Enter percent you will get: ");
+            var percent = Convert.ToSByte(Console.ReadLine());
+
+            int[] month = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ,12 };
+
+            decimal totalAmount = creditSize + (creditSize * percent / 100);
+            decimal sum = totalAmount/12;
+            
+            for (int i=0; i < month.Length; i++)
+            {
+                Console.WriteLine($"{month[i]} month {sum}");
+            }
+
+            Console.WriteLine($"Total amount {totalAmount} ");
         }
     }
 }
